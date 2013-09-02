@@ -1,0 +1,8 @@
+dataSource.driverClassName=com.mysql.jdbc.Driver
+dataSource.url=jdbc:mysql://s11.eatj.com:3307/theqwerty?useTimezone=true&serverTimezone=Asia/Calcutta
+dataSource.username=theqwerty
+dataSource.password=htcnokia
+hibernate.hbm2ddl.auto=update
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=false
+hibernate.connection.pool_size=9

@@ -1,0 +1,240 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Copyright (C) 2006-2009 Youjoomla LLC. All Rights Reserved.        ||
+|| # This file may not be redistributed in whole or significant part. # ||
+|| # ---------------- THIS IS NOT FREE SOFTWARE ---------------- #      ||
+|| # http://www.youjoomla.com | http://www.youjoomla.com/license.html # ||
+|| #################################################################### ||
+\*======================================================================*/
+#yj_booking{
+width:100%;
+padding:0px;
+margin:0 auto;
+overflow:hidden;
+background:#fff;
+}
+#yj_booking .yjformfields{
+float:left;
+clear:right;
+}
+#log {
+background: #F5F4F0;
+border: solid 1px #DEDBD1;
+padding: 0.3em;
+margin: 10px 0px;
+text-align:center;
+}
+#yj_booking .reservation{
+font: normal 12px "Trebuchet MS", Arial, Verdana;
+color: black;
+margin:25px 0;
+}
+#yj_booking fieldset{
+border:0;
+margin:0px;
+padding:0px;
+}
+
+div.reservation fieldset input,
+div.reservation fieldset select,
+div.reservation fieldset button{
+vertical-align: middle;
+font: normal 13px "Trebuchet MS", Arial, Verdana;
+border: solid 1px #DEDBD1;
+margin-bottom:4px;
+}
+
+#yj_booking .field_error{
+	color:#CC0000;
+}
+
+#yj_booking .move{
+margin:0 auto;
+text-align:center;
+width:190px;
+float:none;
+clear:both;
+}
+#yj_booking .move label{
+text-align:left;
+margin:0 0 0 0;
+}
+#yj_booking .perdatam{
+margin:6px auto;
+text-align:left;
+width:190px;
+display:block;
+padding:0;
+}
+div.reservation fieldset.personal-data input{
+border:0;
+margin:0;
+width:182px;
+display:block;
+background: url(../images/input.png) no-repeat center top;
+padding:0px 4px 3px 4px;
+text-align:left;
+
+}
+div.reservation fieldset.personal-data{
+height:209px;
+overflow:hidden;
+}
+div.reservation fieldset textarea{
+overflow: auto;
+width:130px;
+height: 50px;
+white-space:normal;
+margin:4px auto;
+border: solid 1px #DEDBD1;
+padding:5px;
+}
+#number_of_guests{
+border:0;
+margin:0;
+width:54px;
+margin:0 0px 0 10px;
+display:block;
+background: url(../images/guests_bg.png) no-repeat left top;
+padding:2px;
+text-align:left;
+}
+#number_of_guests_label{
+text-indent:10px;
+}
+div.reservation fieldset div{
+float: left;
+margin-right:0px;
+}
+.display-none{
+display: none;
+}
+div.reservation fieldset label{
+display: block;
+font-weight:bold;
+}
+legend span{
+width:158px;
+display:block;
+height:23px;
+line-height:23px;
+padding:0 0px;
+background: url(../images/titles.gif) no-repeat;
+border:0;
+text-indent:5px;
+position:absolute;
+top:-12px;
+}
+div.reservation legend{
+background:none;
+border:0;
+padding: 0;
+margin-bottom: 4px;
+font-weight: bold;
+}
+.form_butt{
+clear:both;
+margin:0 auto;
+width:auto;
+float:right;
+}
+#reset_button,
+#submit_button{
+height:29px;
+border:0;
+color:#fff;
+text-transform:uppercase;
+text-align:center;
+cursor:pointer;
+font-size:12px;
+}
+#submit_button{
+background:url(../images/check_bg.png) no-repeat left top;
+float:left;
+width:130px;
+margin:0 5px 0 0;
+clear:right;
+padding:0;
+text-indent:3px;
+text-align:left;
+}
+#reset_button{
+background:url(../images/reset_bg.png) no-repeat left top;
+float:left;
+width:65px;
+clear:right;
+line-height:31px;
+}
+#captcha_ver{
+width:71px;
+float:left;
+background:url(../images/captcha_bg.png) no-repeat left top;
+border:0;
+padding:2px;
+}
+#captcha_refresh{
+	display:block;
+	position:relative;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	float:left;
+	background:url(../images/refresh.gif) center center no-repeat;
+	margin:5px 0px 0px 10px;
+}
+#captcha_image{
+	float:left;
+}
+.captch_img{
+float:right;
+width:118px;
+}
+/***** Real Side Borders box *****/
+.cB {
+background:#fff;
+border:1px #d5d1be solid;
+border-width:0 1px;
+padding:0 10px;
+position:relative;
+margin:5px;
+}
+.cBt, .cBb, .cBt div, .cBb div {
+background:url(../images/rounds.png) top right;
+height:32px;
+}
+.cBt div { background-position:top left; }
+.cBb div { background-position:bottom left; }
+.cBb { background-position:bottom right; }
+.cBt, .cBb {
+margin:0 -11px 0 -11px;
+padding-right:18px;
+}
+#yj_booking label.invalid{
+color:#ff0000;
+font-weight:bold;
+}
+#yj_booking .invalid {
+border:0px solid #ff0000; 
+}
+
+#yj_booking .messages{
+	display:block;
+	position:relative;
+	clear:both;
+	font-size:12px;
+}
+#yj_booking .messages{	
+	display:none;
+	background: #F5F4F0;
+	border: solid 1px #DEDBD1;
+	padding:5px;
+	margin: 10px;
+	text-align:center;
+	color:#5A5A5A;
+}
+#yj_booking .loading{
+	background:url(../images/indicator.gif) left center no-repeat;
+	height:16px;
+	padding-left:20px;
+	display:block;
+}

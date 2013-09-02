@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="myPackage" extends="struts-default">
+		
+		<action name="index" class="in.theqwerty.travel.webapp.actions.IndexAction">
+			<result>/WEB-INF/jsp/index.jsp</result>
+		</action>
+	
+	<!-- FLIGHT MODULE ACTIONS -->	
+		<action name="flight" class="in.theqwerty.travel.webapp.actions.IndexAction">
+			<result>/WEB-INF/jsp/flight.jsp</result>
+		</action>
+		
+		<action name="flightList" class="in.theqwerty.travel.webapp.actions.json.FlightAction">
+       		<result name="success">/WEB-INF/jsp/flights.jsp</result>
+       		<result name="input">/WEB-INF/jsp/flight.jsp</result>
+       	</action>
+    <!-- END OF FLIGHT MODULE ACTIONS -->
+    
+    <!-- USER LOGIN MODULE ACTIONS -->   	
+       	<action name="admin" class="in.theqwerty.travel.webapp.actions.LoginAction" > 
+       		<result name="admin" type="redirectAction">updateDeals</result>
+       		<result name="user" type="redirectAction">updateDeals</result>
+       		<result name="login">/WEB-INF/jsp/admin.jsp</result>
+       	</action>
+       	
+       	<action name="login" class="in.theqwerty.travel.webapp.actions.LoginAction" method="login"> 
+       		<result name="admin" type="redirectAction">updateDeals</result>
+       		<result name="user" type="redirectAction">updateDeals</result>
+       		<result name="input">/WEB-INF/jsp/admin.jsp</result>
+       	</action>
+	<!-- END OF USER LOGIN MODULE ACTIONS -->
+       	
+	<!-- ADMIN MODULE ACTIONS -->
+       	<action name="updateDeals" class="in.theqwerty.travel.webapp.actions.ToUpdateDeal">
+       		<result name="login">/WEB-INF/jsp/admin.jsp</result>
+       		<result name="success">/WEB-INF/jsp/updateDeals.jsp</result>
+       	</action>
+       	
+       	<action name="saveDeal" class="in.theqwerty.travel.webapp.actions.UpdateDealAction">
+       		<result name="login">/WEB-INF/jsp/admin.jsp</result>
+       		<result name="success" type="redirectAction">updateDeals</result>
+       		<result name="error">/WEB-INF/jsp/updateDealError.jsp</result>
+       	</action>
+       	
+       	<action name="saveHotel" class="in.theqwerty.travel.webapp.actions.UpdateHotelAction">
+       		<result name="login">/WEB-INF/jsp/admin.jsp</result>
+       		<result name="success" type="redirectAction">updateDeals</result>
+       		<result name="error">/WEB-INF/jsp/updateDealError.jsp</result>
+       	</action>
+    <!-- END OF ADMIN MODULE ACTIONS -->
+    
+    <!-- DEAL MODULE ACTIONS -->   	
+       	<action name="deals" class="in.theqwerty.travel.webapp.actions.ToDeals">
+       		<result name="success">/WEB-INF/jsp/deals.jsp</result>
+       		<result name="error">/WEB-INF/jsp/deals.jsp</result>
+       	</action>
+       	
+       	<action name="deal" class="in.theqwerty.travel.webapp.actions.ToSingleDeal">
+       		<result name="success">/WEB-INF/jsp/deal.jsp</result>
+       		<result name="error">/WEB-INF/jsp/updateDealError.jsp</result>
+       	</action>
+	<!-- END OF DEAL MODULE ACTIONS -->       	
+       	
+	<!-- TEST ACTIONS -->       	
+       	<action name="showDeal" class="in.theqwerty.travel.webapp.actions.TestAction">
+       		<result>/WEB-INF/jsp/deals.jsp</result>
+       	</action>
+       	
+       	<action name="construction">
+       		<result>/WEB-INF/jsp/construction.jsp</result>
+       	</action>
+       	
+       	<action name="payment" class="in.theqwerty.travel.webapp.actions.ToSingleDeal">
+       		<result>/WEB-INF/jsp/payment.jsp</result>
+       	</action>
+       	
+       	<action name="checkout" class="in.theqwerty.travel.webapp.actions.CheckoutAction">
+       		<result>/WEB-INF/jsp/index.jsp</result>
+       	</action>
+       	
+       	<action name="test" class="in.theqwerty.travel.webapp.actions.TestAction">
+       		<result>/WEB-INF/jsp/test.jsp</result>
+       	</action>
+	<!-- END OF TEST ACTIONS -->
+	</package>
+	
+	<package name="json" extends="json-default">
+		<action name="allDeals" class="in.theqwerty.travel.webapp.actions.GetPaginatedDeals" >
+		  	<result type="json">
+				<param name="root">paginatedDealsResponse</param>
+		  	</result>
+		</action>
+	</package>
+	
+</struts>

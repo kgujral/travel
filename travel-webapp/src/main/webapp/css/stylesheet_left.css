@@ -1,0 +1,149 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Youjoomla LLC 
+|| # ---------------------------------------------------------------- # ||
+|| # Copyright (C)2006-2009 Youjoomla LLC. All Rights Reserved.         ||
+|| # This file may not be redistributed in whole or significant part. # ||
+|| # ---------------- THIS IS NOT FREE SOFTWARE ----------------      # ||
+|| # http://www.youjoomla.com | http://www.youjoomla.com/license.html # ||
+|| #################################################################### ||
+\*======================================================================*/
+/* news item holder*/
+#YJT_container{
+display:block;
+position:relative;
+margin:0px auto 0px;
+background-color:#FFFFFF;
+}
+/* navigator styling */
+#navigator_outer{
+display:block;
+position:absolute;
+left:0px;
+top:0px;
+z-index:100;
+overflow:hidden;
+}
+#navigator{
+display:block;
+position:relative;
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+/* default navigator element */
+#navigator li.element{
+display:block;
+position:relative;
+clear:both;
+height:100px;
+margin:0px;
+padding:0px;
+cursor:pointer;
+}
+/* selected navigator element */
+#navigator li.selected_left{
+background:url(../images/pointer_selected.png) right no-repeat;
+}
+/* default instance inner navigator element styling */
+#navigator li.element div.inner{
+display:block;
+position:relative;
+clear:both;
+height:100px;
+background:url(../images/nav_bg.png) repeat-x;
+}
+#navigator li.element div.inner img{
+float:left;
+margin:10px;
+border:1px #dad4ba solid;
+background:#FFFFFF;
+padding:3px;
+width:74px;
+height:74px;
+}
+#navigator li.element div.inner span.title{
+display:block;
+position:relative;
+float:left;
+color:#ac3a04;
+font-size:12px;
+font-weight:bold;
+margin:15px 0px 10px;
+}
+#navigator li.element div.inner p.desc{
+display:block;
+position:relative;
+height:40px;
+overflow:hidden;
+font-size:11px;
+color:#636363;
+float:left;
+margin:0px;
+padding:0px;
+}
+/* we set the selected inner elements as descendents of li.selected_left to affect all inner elements for selected offer */
+#navigator li.selected_left div.inner{
+background:url(../images/nav_selected.png) repeat-x;
+color:#FFFFFF;
+}
+#navigator li.selected_left div.inner span.title{
+color:#FFF;
+}
+#navigator li.selected_left div.inner img{
+border:1px #94260f solid;
+background:#762b04;
+}
+#navigator li.selected_left div.inner p.desc{
+color:#FFF;
+}
+/* end of navigation styling, starting slides */
+#slides{
+display:block;
+position:relative;
+margin-left:auto;
+overflow:hidden;
+}
+#slides div.slide{
+display:block;
+position:relative;
+overflow:hidden;
+}
+#slides div.slide div.long_desc{
+display:block;
+position:absolute;
+right:-500px;
+top:0px;
+width:250px;
+font-size:11px;
+color:#FFFFFF;
+padding:20px;
+text-align:justify;
+z-index:80;
+background:url(../images/desc_bg.png);
+
+}
+#slides div.slide div.long_desc h1{
+color:#fff;
+font-size:18px;
+background:none;
+border:none;
+letter-spacing:normal;
+}
+#slides div.slide div.long_desc a{
+display:block;
+position:relative;
+width:150px;
+padding:10px;
+color:#FFFFFF;
+font-size:12px;
+background:#852900;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+margin:10px 0px 0px auto;
+z-index:100000;
+}
+		
+		
+

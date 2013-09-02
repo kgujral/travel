@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- For @Autowire @Resource @Service @PersistenceCeontext etc , for Annotation 
+		Post Processors -->    
+    <context:component-scan base-package="in.theqwerty.travel" /> 
+    
+	<!-- Example of SAF2 action instantiated by Spring -->
+    <bean id="index" class="in.theqwerty.travel.IndexAction" scope="prototype"/>
+
+	<!-- For Using Properties File -->    
+    <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:datasource.properties</value>
+			</list>
+		</property>
+	</bean>
+    
+    <!-- Using JPA to persist objects with Hibernate as engine -->
+    <bean id="entityManagerFactory" 
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" 
+        p:dataSource-ref="dataSource"> 
+        <property name="persistenceUnitName" value="travelRepository" />
+        <property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+		
+    </bean>
+    
+    <!-- Database Properties -->
+    <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>${dataSource.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${dataSource.url}</value>
+		</property>
+		<property name="username">
+			<value>${dataSource.username}</value>
+		</property>
+		<property name="password">
+			<value>${dataSource.password}</value>
+		</property>
+	</bean>
+    
+    <!-- To be able to use @Transactional annotation -->
+    <tx:annotation-driven /> 
+ 
+    <bean id="transactionManager" 
+        class="org.springframework.orm.jpa.JpaTransactionManager"> 
+        <property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+        <property name="entityManagerFactory" ref="entityManagerFactory" /> 
+    </bean> 
+    
+</beans>
+
